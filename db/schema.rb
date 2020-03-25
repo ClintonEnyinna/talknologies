@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_24_181453) do
+ActiveRecord::Schema.define(version: 2020_03_25_001523) do
+
+  create_table "opinions", force: :cascade do |t|
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "author_id"
+    t.index ["author_id"], name: "index_opinions_on_author_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
