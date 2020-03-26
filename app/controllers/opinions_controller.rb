@@ -2,6 +2,7 @@ class OpinionsController < ApplicationController
   before_action :require_login
 
   def index
+    @users = User.all
     @opinions = Opinion.all.includes(:user)
   end
 
