@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-2 border-right">
+      <div class="row">
+        <div class="col-6">
+          Following
+        </div>
+        <div class="col-6">
+          Followers
+        </div>
+      </div>
+      <ul>
+        <%= link_to 'HOME', root_path %>
+      </ul>
+      <ul>
+        <%= link_to 'PROFILE', root_path %>
+      </ul>
+    </nav>
+    <main class="col-sm-7 p-0 bg-light border-right">
+      <nav class="navbar navbar-expand-lg navbar-light px-0 py-3">
+        <div class="collapse navbar-collapse border-bottom">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">TWEETS</a>
+          </div>
+        </div>
+      </nav>
+      <div>
+        <div class="container">
+          <div class="bg-white rounded">
+            <h6 class="p-3 m-0 text-muted">TWEET SOMETHING</h6>
+              <%= form_for(:opinion, url: opinions_path, html: {class: 'px-3 pb-3'}) do |f| %>
+                <div class="form-group">
+                  <%= f.text_field :text, class: 'form-control', placeholder: 'Compose new tweet' %>
+                </div> 
+              <% end %>
+          </div>
+          <div class="bg-white rounded px-3 py-4 mt-5 mb-5">
+            <h6 class="p-3 mb-3 border-bottom text-primary"><%= @opinions.count%> NEW TWEETS</h6>
+            <% @opinions.each do |opinion| %>
+              <h6 class="text-black font-weight-bold mb-0"><%= opinion.user.fullname %></h6>
+              <p class=""><%= opinion.text %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </main>
+    <aside class="col-sm-3 bg-light">
+      <div class="navbar navbar-expand-lg navbar-light px-0 py-3">
+        <div class="collapse navbar-collapse border-bottom">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">WHO TO FOLLOW</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
