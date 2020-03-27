@@ -25,6 +25,9 @@
       </div>
     </div>
     <main class="col-sm-7 p-0 bg-light border-right">
+      <div class="cover">
+        <img src="..." class="card-img" alt="...">
+      </div>
       <nav class="nav px-5 mb-5 main-nav border-bottom d-flex align-items-center">
         <%= link_to 'TWEETS', root_path, class: 'nav-link active text-dark px-0' %>
       </nav>
@@ -58,7 +61,7 @@
           </div>
         </div>
       </div>
-    </main>
+    </main class="col-sm-7">
     <aside class="col-sm-3 bg-light">
       <div class="main-nav border-bottom d-flex align-items-center">
         <div class="">
@@ -66,10 +69,6 @@
         </div>
       </div>
       <div class="container">
-        <% @users.each do |user| %>
-          <%= link_to user.fullname, user_path(user) %>
-          </br>
-        <% end %>
       </div>
     </aside>
   </div>

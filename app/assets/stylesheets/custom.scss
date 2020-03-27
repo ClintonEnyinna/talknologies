@@ -1,0 +1,52 @@
+.bg-blue{
+    background-color: #213245;
+}
+
+.bg-light-blue{
+    background-color: #51A5E5;
+}
+
+.b-bottom{
+    border-bottom: 1px solid rgb(39, 38, 38);
+}
+
+.b-right {
+    border-right: 1px solid rgb(39, 38, 38);
+}
+
+.main-nav{
+    height: 67px;
+}
+
+.active{
+    height: inherit;
+    line-height: 65px;
+    border-bottom: 2px solid rgb(32, 32, 83);
+}
+
+li a{
+    display: block;
+}
+
+.color-link{
+    color: #667B8F;
+    width: inherit;
+    text-decoration: none !important;
+}
+
+.color-link:hover{
+    color: white;
+}
+
+.current{
+  color: white;
+  background-color: #4E9DD8;
+}
+
+.text-small{
+  font-size: 0.9vw;
+}
+
+.cover{
+  height: 30vh;
+}

@@ -14,6 +14,10 @@ class UsersController < ApplicationController
       end
     end
 
+    def show
+      @opinions = current_user.opinions
+    end
+
     private
 
     def user_params
