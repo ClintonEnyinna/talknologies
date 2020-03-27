@@ -74,18 +74,35 @@
           </div>
         </div>
       </div>
-    </main class="col-sm-7">
+    </main>
     <aside class="col-sm-3 bg-light">
       <div class="">
-        <div class="">
-        <%= image_tag(@user.profile) %>
-        </div>
-        <div class="">
-          <%= @user.fullname %>
-          <%= @user.username %>
+        <div class="text-center d-flex flex-column align-items-stretch" style="height: 400px;">
+          <div class="pt-5">
+            <%= image_tag(@user.profile, class: "profile-img") %>
+          </div>
+          <div class="card-body pb-4">
+            <p class="mb-0"> <%= @user.fullname %> </p>
+            <p class="text-muted text-extra-small"> @<%= @user.username %> </p>
+          </div>
+          <div class="row border-top border-bottom">
+            <div class="col-sm-4 border-right py-3">
+              <div class = ""><%= @opinions.count %></div>
+              <h6 class="mb-0 text-muted">Tweets</h6>
+            </div>
+            <div class="col-sm-4 border-right py-3">
+              <div class = ""><%= @user.followees.count %></div>
+              <h6 class="mb-0 text-muted">Following</h6>
+            </div>
+            <div class="col-sm-4 py-3">
+              <div class = ""><%= @user.followers.count %></div>
+              <h6 class="mb-0 text-muted">Followers</h6>
+            </div>
+          </div> 
         </div>
       </div>
-      <div class="container">
+      <div class="border-bottom d-flex align-items-center" style="height: 82px">
+        <h6 class="text-muted pl-2 mb-0"> FOLLOWED BY </h6>
       </div>
     </aside>
   </div>

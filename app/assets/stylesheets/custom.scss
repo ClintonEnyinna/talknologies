@@ -48,7 +48,7 @@ li a{
 }
 
 .cover{
-  height: 400px;
+  max-height: 400px;
 }
 
 .cover-img{
@@ -82,4 +82,12 @@ li a{
     padding: 3px;
     width: 70px;
     height: 52px;
+}
+
+.text-extra-small {
+    font-size: 14px;
+}
+
+.profile-img{
+    border-radius: 50%;
 }
