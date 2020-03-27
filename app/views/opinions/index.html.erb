@@ -1,32 +1,36 @@
 <div class="container-fluid">
-  <div class="row">
-    <nav class="col-2 border-right">
-      <div class="row">
-        <div class="col-6">
-          Following
+  <div class="row" style="min-height: calc(100vh - 72px);">
+    <div class="col-sm-2 b-right bg-blue">
+      <div class="row text-center b-bottom">
+        <div class="col-sm-6 py-2 b-right">
+          <div class="text-white"><%=current_user.followees.count if current_user%></div>
+          <h6 class="text-secondary text-small">Following</h6>
         </div>
-        <div class="col-6">
-          Followers
+        <div class="col-sm-6 py-2">
+          <div class="text-white"><%=current_user.followers.count if current_user%></div>
+          <h6 class="text-secondary text-small">Followers</h6>
         </div>
       </div>
-      <ul>
-        <%= link_to 'HOME', root_path %>
-      </ul>
-      <ul>
-        <%= link_to 'PROFILE', root_path %>
-      </ul>
-    </nav>
+      <div class="row">
+        <nav class="w-100">
+          <ul class="list-unstyled">
+            <li class="">
+              <%= link_to 'HOME', root_path, class: 'p-3 color-link' %>
+            </li>
+            <li class="">
+              <%= link_to 'PROFILE', user_path(current_user), class: 'p-3 color-link' %>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
     <main class="col-sm-7 p-0 bg-light border-right">
-      <nav class="navbar navbar-expand-lg navbar-light px-0 py-3">
-        <div class="collapse navbar-collapse border-bottom">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">TWEETS</a>
-          </div>
-        </div>
+      <nav class="nav px-5 mb-5 main-nav border-bottom d-flex align-items-center">
+        <%= link_to 'TWEETS', root_path, class: 'nav-link active text-dark px-0' %>
       </nav>
       <div>
-        <div class="container">
-          <div class="bg-white rounded">
+        <div class="container px-5">
+          <div class="bg-white border rounded">
             <h6 class="p-3 m-0 text-muted">TWEET SOMETHING</h6>
               <%= form_for(:opinion, url: opinions_path, html: {class: 'px-3 pb-3'}) do |f| %>
                 <div class="form-group">
@@ -34,23 +38,53 @@
                 </div> 
               <% end %>
           </div>
-          <div class="bg-white rounded px-3 py-4 mt-5 mb-5">
-            <h6 class="p-3 mb-3 border-bottom text-primary"><%= @opinions.count%> NEW TWEETS</h6>
+          <div class="bg-white border rounded px-3 py-4 mt-5 mb-5">
+            <h6 class="pb-3 border-bottom text-primary">RECENT TWEETS</h6>
             <% @opinions.each do |opinion| %>
-              <h6 class="text-black font-weight-bold mb-0"><%= opinion.user.fullname %></h6>
-              <p class=""><%= opinion.text %></p>
+              <div class="card mb-3 border-0">
+                <div class="row no-gutters">
+                  <div class="col-3 col-lg-1">
+                    <%= image_tag(opinion.user.thumbnail, class: 'thumbnail')%>
+                  </div>
+                  <div class="col-9 col-lg-11">
+                    <div class="card-body py-1 px-3">
+                      <h6 class="card-title mb-0"><%= link_to opinion.user.fullname, user_path(opinion.user), class: 'text-dark text-decoration-none' %></h6>
+                      <p class="card-text text-muted"><%= opinion.text %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             <% end %>
           </div>
         </div>
       </div>
     </main>
     <aside class="col-sm-3 bg-light">
-      <div class="navbar navbar-expand-lg navbar-light px-0 py-3">
-        <div class="collapse navbar-collapse border-bottom">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">WHO TO FOLLOW</a>
-          </div>
+      <div class="main-nav border-bottom d-flex align-items-center">
+        <div class="">
+          <a class="text-muted" href="#">WHO TO FOLLOW</a>
         </div>
+      </div>
+      <div class="container py-4">
+        <% @users.each do |user| %>
+          <% unless current_user == user %>
+            <% unless current_user.cannot_follow?(user) %>
+              <div class="card mb-4 border-0 bg-transparent">
+                  <div class="row no-gutters">
+                    <div class="col-sm-2">
+                      <%= image_tag(user.thumbnail, class: 'side-thumbnail') %>
+                    </div>
+                    <div class="col-sm-10">
+                      <div class="card-body py-3 px-4">
+                        <h6 class="card-title mb-0"><%= link_to user.fullname, user_path(user) %></h6>
+                        <small class="text-muted">@<%=user.username%></small>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
       </div>
     </aside>
   </div>
