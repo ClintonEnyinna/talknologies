@@ -16,7 +16,19 @@ class User < ApplicationRecord
 
   def image_nil
     if !self.image.attached?
-      self.image.attach(io: File.open('app/assets/images/default.jpeg'), filename: 'default.jpeg', content_type: 'image/jpeg')
+      self.image.attach(io: File.open('app/assets/images/default_picture.jpg'), filename: 'default_picture.jpg')
     end
+  end
+
+  def thumbnail
+    self.image.variant(resize: '70x70!').processed
+  end
+
+  def profile
+    self.image.variant(resize: '150x150!').processed
+  end
+
+  def cover
+    self.image.variant(resize: '1110x400!').processed
   end
 end
