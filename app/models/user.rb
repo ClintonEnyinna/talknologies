@@ -31,4 +31,9 @@ class User < ApplicationRecord
   def cover
     self.image.variant(resize: '1110x400!').processed
   end
+
+  def cannot_follow?(user)
+    self == user ||
+    self.followees.where(username: user.username).exists?
+  end
 end
