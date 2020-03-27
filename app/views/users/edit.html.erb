@@ -1,13 +1,13 @@
-<div class="container">
+<div class="container" style="max-width: 500px">
+  <h4 class="text-center my-5">Update Information<h4>
     <%= form_for(@user) do |f| %>
-        <%= f.label :fullname %>
+      <div class="form-group">
+        <%= f.label :fullname, class: 'h5' %>
         <%= f.text_field :fullname, class: 'form-control' %>
-        </br>
-        
-        <%= f.label :image %>
-        </br>
-        <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
-        </br>
-        <%= f.submit 'UPDATE', class: "btn btn-primary mt-5" %>
+      </div>
+      <div class="form-group">
+        <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: 'btn pl-0' %>
+      </div>
+      <%= f.submit 'UPDATE', class: "btn btn-primary mt-4" %>
     <% end %>
 </div>

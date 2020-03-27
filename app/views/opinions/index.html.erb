@@ -47,8 +47,8 @@
                     <%= image_tag(opinion.user.thumbnail, class: 'thumbnail')%>
                   </div>
                   <div class="col-9 col-lg-11">
-                    <div class="card-body py-0 px-3">
-                      <h6 class="card-title mb-0"><%= opinion.user.fullname %></h6>
+                    <div class="card-body py-1 px-3">
+                      <h6 class="card-title mb-0"><%= link_to opinion.user.fullname, user_path(opinion.user), class: 'text-dark text-decoration-none' %></h6>
                       <p class="card-text text-muted"><%= opinion.text %></p>
                     </div>
                   </div>
@@ -68,19 +68,21 @@
       <div class="container py-4">
         <% @users.each do |user| %>
           <% unless current_user == user %>
-            <div class="card mb-4 border-0 bg-transparent">
-                <div class="row no-gutters">
-                  <div class="col-sm-2">
-                    <%= image_tag(user.thumbnail, class: 'side-thumbnail') %>
-                  </div>
-                  <div class="col-sm-10">
-                    <div class="card-body py-3 px-4">
-                      <h6 class="card-title mb-0"><%= link_to user.fullname, user_path(user) %></h6>
-                      <small class="text-muted">Followed by</small>
+            <% unless current_user.cannot_follow?(user) %>
+              <div class="card mb-4 border-0 bg-transparent">
+                  <div class="row no-gutters">
+                    <div class="col-sm-2">
+                      <%= image_tag(user.thumbnail, class: 'side-thumbnail') %>
+                    </div>
+                    <div class="col-sm-10">
+                      <div class="card-body py-3 px-4">
+                        <h6 class="card-title mb-0"><%= link_to user.fullname, user_path(user) %></h6>
+                        <small class="text-muted">@<%=user.username%></small>
+                      </div>
                     </div>
                   </div>
-                </div>
-            </div>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
       </div>

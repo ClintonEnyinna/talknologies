@@ -104,6 +104,23 @@
       <div class="border-bottom d-flex align-items-center" style="height: 82px">
         <h6 class="text-muted pl-2 mb-0"> FOLLOWED BY </h6>
       </div>
+      <div class="container py-4">
+        <% @user.followees.each do |user| %>
+            <div class="card mb-4 border-0 bg-transparent">
+                <div class="row no-gutters">
+                  <div class="col-sm-2">
+                    <%= image_tag(user.thumbnail, class: 'side-thumbnail') %>
+                  </div>
+                  <div class="col-sm-10">
+                    <div class="card-body py-3 px-4">
+                      <h6 class="card-title mb-0"><%= link_to user.fullname, user_path(user) %></h6>
+                      <small class="text-muted">@<%=user.username%></small>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        <% end %>
+      </div>
     </aside>
   </div>
 </div>
