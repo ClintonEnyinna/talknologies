@@ -6,9 +6,23 @@
     <main class="col-sm-10 p-0">
       <nav class="navbar navbar-expand navbar-light bg-light-blue p-3">
         <div class="collapse navbar-collapse d-flex justify-content-end">
-          <div class="navbar-nav">
-            <%= link_to 'LOG OUT', logout_path, method: :delete, class: 'nav-item nav-link text-dark' %>
-          </div>
+          <ul class="navbar-nav">
+            <% if current_user %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle text-white text-decoration-none" data-toggle="dropdown">
+                  ACCOUNT <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right text-center py-0">
+                  <li>
+                    <%= link_to 'SETTINGS', edit_user_path(current_user), class: 'text-decoration-none border-bottom dropdown-link py-2' %>
+                  </li>
+                  <li>
+                    <%= link_to 'LOG OUT', logout_path, method: :delete, class: 'text-decoration-none dropdown-link py-2' %>
+                  </li>
+                </ul>
+              </li>
+            <% end %>
+          </ul>
         </div>
       </nav>
     </main>

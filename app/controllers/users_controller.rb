@@ -14,13 +14,27 @@ class UsersController < ApplicationController
       end
     end
 
+    def edit
+      @user = User.find(params[:id])
+    end
+
+    def update
+      @user = User.find(params[:id])
+      if @user.update_attributes(user_params)
+        redirect_to @user
+      else
+        render 'edit'
+      end
+    end
+
     def show
-      @opinions = current_user.opinions
+      @user = User.find(params[:id])
+      @opinions = @user.opinions
     end
 
     private
 
     def user_params
-      params.require(:user).permit(:username, :fullname)
+      params.require(:user).permit(:username, :fullname, :image)
     end
 end

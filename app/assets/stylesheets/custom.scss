@@ -50,3 +50,24 @@ li a{
 .cover{
   height: 400px;
 }
+
+.dropdown-link{
+    color: black;
+}
+
+.dropdown-link:hover{
+    color: white;
+    background-color: #4E9DD8;
+}
+
+.thumbnail {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    padding: 3px;
+}
+
+.side-thumbnail {
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    object-fit: contain;
+}

@@ -26,32 +26,34 @@
     </div>
     <main class="col-sm-7 p-0 bg-light border-right">
       <div class="cover">
-        <%= image_tag(current_user.cover) if current_user.image %>
+        <%= image_tag(@user.cover) if current_user.image %>
       </div>
       <nav class="nav px-5 mb-5 main-nav border-bottom d-flex align-items-center">
         <%= link_to 'TWEETS', root_path, class: 'nav-link active text-dark px-0' %>
       </nav>
       <div>
         <div class="container px-5">
-          <div class="bg-white border rounded">
-            <h6 class="p-3 m-0 text-muted">TWEET SOMETHING</h6>
-              <%= form_for(:opinion, url: opinions_path, html: {class: 'px-3 pb-3'}) do |f| %>
-                <div class="form-group">
-                  <%= f.text_field :text, class: 'form-control', placeholder: 'Compose new tweet' %>
-                </div> 
-              <% end %>
-          </div>
+          <% if @user == current_user %>
+            <div class="bg-white border rounded">
+                <h6 class="p-3 m-0 text-muted">TWEET SOMETHING</h6>
+                <%= form_for(:opinion, url: opinions_path, html: {class: 'px-3 pb-3'}) do |f| %>
+                  <div class="form-group">
+                    <%= f.text_field :text, class: 'form-control', placeholder: 'Compose new tweet' %>
+                  </div> 
+                <% end %>
+            </div>
+          <% end %>
           <div class="bg-white border rounded px-3 py-4 mt-5 mb-5">
             <h6 class="pb-3 border-bottom text-primary">RECENT TWEETS</h6>
             <% @opinions.each do |opinion| %>
               <div class="card mb-3 border-0">
                 <div class="row no-gutters">
                   <div class="col-3 col-lg-1">
-                    <%= image_tag(current_user.thumbnail) if current_user.image %>
+                    <%= image_tag(@user.thumbnail, class: 'thumbnail') %>
                   </div>
                   <div class="col-9 col-lg-11">
-                    <div class="card-body py-0">
-                      <h6 class="card-title mb-0"><%= opinion.user.fullname %></h6>
+                    <div class="card-body py-0 px-3">
+                      <h6 class="card-title mb-0"><%= @user.fullname %></h6>
                       <p class="card-text text-muted"><%= opinion.text %></p>
                     </div>
                   </div>
@@ -65,11 +67,11 @@
     <aside class="col-sm-3 bg-light">
       <div class="">
         <div class="">
-        <%= image_tag(current_user.profile) if current_user.image %>
+        <%= image_tag(@user.profile) %>
         </div>
         <div class="">
-          <%= current_user.fullname %>
-          <%= current_user.username %>
+          <%= @user.fullname %>
+          <%= @user.username %>
         </div>
       </div>
       <div class="container">

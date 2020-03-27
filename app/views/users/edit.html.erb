@@ -1,0 +1,13 @@
+<div class="container">
+    <%= form_for(@user) do |f| %>
+        <%= f.label :fullname %>
+        <%= f.text_field :fullname, class: 'form-control' %>
+        </br>
+        
+        <%= f.label :image %>
+        </br>
+        <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+        </br>
+        <%= f.submit 'UPDATE', class: "btn btn-primary mt-5" %>
+    <% end %>
+</div>
