@@ -25,10 +25,16 @@ Features
 * See posts of users you follow
 * Update your name and profile picture
 
+### Prerequisites
 
-## Version
-* Rails: **5.2.4.2**
-* Ruby: **2.6.5p114**
+- Ruby: 2.6.5
+- Rails: 5.2.4
+- Postgres: >=9.5
+
+
+## Live Version
+[Link to app :star2:](https://mighty-lowlands-57810.herokuapp.com/)
+
 
 ## Built with
 * [Rails](https://rubyonrails.org/) - Framework 
