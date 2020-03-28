@@ -27,8 +27,8 @@ Features
 
 
 ## Version
-* Rails: **ruby 5.2.4.2**
-* Ruby: **ruby 2.6.5p114**
+* Rails: **5.2.4.2**
+* Ruby: **2.6.5p114**
 
 ## Built with
 * [Rails](https://rubyonrails.org/) - Framework 
