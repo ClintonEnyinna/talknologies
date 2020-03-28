@@ -1,0 +1,26 @@
+<div class="bg-white border rounded">
+    <h6 class="p-3 m-0 text-muted">TWEET SOMETHING</h6>
+        <%= form_for(:opinion, url: opinions_path, html: {class: 'px-3 pb-3'}) do |f| %>
+        <div class="form-group">
+            <%= f.text_field :text, class: 'form-control', placeholder: 'Compose new tweet' %>
+        </div> 
+        <% end %>
+    </div>
+    <div class="bg-white border rounded px-3 py-4 mt-5 mb-5">
+    <h6 class="pb-3 border-bottom text-primary">RECENT TWEETS</h6>
+    <% @opinions.each do |opinion| %>
+        <div class="card mb-3 border-0">
+        <div class="row no-gutters">
+            <div class="col-3 col-lg-1">
+            <%= image_tag(opinion.author.thumbnail, class: 'thumbnail')%>
+            </div>
+            <div class="col-9 col-lg-11">
+            <div class="card-body py-1 px-3">
+                <h6 class="card-title mb-0"><%= link_to opinion.author.fullname, user_path(opinion.author), class: 'text-dark text-decoration-none' %></h6>
+                <p class="card-text text-muted"><%= opinion.text %></p>
+            </div>
+            </div>
+        </div>
+        </div>
+    <% end %>
+</div>
