@@ -255,7 +255,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.4.1)
   byebug
-  capybara (>= 2.15)
+  capybara (>= 2.5.0)
   chromedriver-helper
   coffee-rails (~> 4.2)
   image_processing
