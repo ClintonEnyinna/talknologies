@@ -1,13 +1,13 @@
 class FriendshipsController < ApplicationController
   def create
     @friend = User.find(params[:id])
-    @friend.followers << current_user
+    follow(@friend)
     redirect_to @friend
   end
 
   def destroy
     @friend = User.find(params[:id])
-    Following.find_by(follower_id: current_user.id, followed_id: @friend.id).destroy
+    unfollow(@friend)
     redirect_to @friend
   end
 end
