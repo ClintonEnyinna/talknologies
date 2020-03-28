@@ -32,7 +32,7 @@ Features
 
 ## Built with
 * [Rails](https://rubyonrails.org/) - Framework 
-* [Ruby](https://www.ruby-lang.org/en/) - Programming language used Library to automate web based activities
+* [Ruby](https://www.ruby-lang.org/en/) - Programming language used
 * [VS Code](https://code.visualstudio.com/) - The code editor used
 * [Ubuntu](https://www.linux.org/pages/download/) - Operating System
 
