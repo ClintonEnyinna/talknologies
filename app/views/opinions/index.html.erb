@@ -44,11 +44,11 @@
               <div class="card mb-3 border-0">
                 <div class="row no-gutters">
                   <div class="col-3 col-lg-1">
-                    <%= image_tag(opinion.user.thumbnail, class: 'thumbnail')%>
+                    <%= image_tag(opinion.author.thumbnail, class: 'thumbnail')%>
                   </div>
                   <div class="col-9 col-lg-11">
                     <div class="card-body py-1 px-3">
-                      <h6 class="card-title mb-0"><%= link_to opinion.user.fullname, user_path(opinion.user), class: 'text-dark text-decoration-none' %></h6>
+                      <h6 class="card-title mb-0"><%= link_to opinion.author.fullname, user_path(opinion.author), class: 'text-dark text-decoration-none' %></h6>
                       <p class="card-text text-muted"><%= opinion.text %></p>
                     </div>
                   </div>

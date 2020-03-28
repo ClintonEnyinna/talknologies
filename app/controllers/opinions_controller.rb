@@ -3,7 +3,7 @@ class OpinionsController < ApplicationController
 
   def index
     @users = User.all.order(created_at: :desc)
-    @opinions = Opinion.all.includes(:user)
+    @opinions = Opinion.all.includes(:author)
   end
 
   def create
