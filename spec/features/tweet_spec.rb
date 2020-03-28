@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Tweets", type: :feature do
+RSpec.feature 'Tweets', type: :feature do
   let(:user1) do
     User.create(fullname: 'user one',
                 username: 'user1')
@@ -8,9 +8,9 @@ RSpec.feature "Tweets", type: :feature do
 
   scenario 'User makes a tweet' do
     log_in(user1)
-    fill_in 'opinion_text', with: "This is a test"
+    fill_in 'opinion_text', with: 'This is a test'
     submit
-    expect(page).to have_content("This is a test")
+    expect(page).to have_content('This is a test')
   end
 
   def log_in(user)
@@ -20,9 +20,7 @@ RSpec.feature "Tweets", type: :feature do
   end
 
   def submit
-    form = find("form")
+    form = find('form')
     Capybara::RackTest::Form.new(page.driver, form.native).submit({})
   end
 end
-
-

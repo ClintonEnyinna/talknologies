@@ -1,6 +1,5 @@
 module FriendshipsHelper
-  
-  def follow(friend)
+  def follow(_friend)
     @friend.followers << current_user
   end
 

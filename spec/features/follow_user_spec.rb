@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "FollowUsers", type: :feature do
+RSpec.feature 'FollowUsers', type: :feature do
   let(:user1) do
     User.create(fullname: 'user one',
                 username: 'user1')
@@ -27,7 +27,6 @@ RSpec.feature "FollowUsers", type: :feature do
     click_button('FOLLOW')
     expect(page).to have_selector(:link_or_button, 'UNFOLLOW')
   end
-
 
   def log_in(user)
     visit login_path

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "UnfollowUsers", type: :feature do
+RSpec.feature 'UnfollowUsers', type: :feature do
   let(:user1) do
     User.create(fullname: 'user one',
                 username: 'user1')
@@ -27,7 +27,6 @@ RSpec.feature "UnfollowUsers", type: :feature do
     expect(page).to have_selector(:link_or_button, 'UNFOLLOW')
   end
 
-
   def log_in(user)
     visit login_path
     fill_in 'Username', with: user.username
@@ -39,4 +38,3 @@ RSpec.feature "UnfollowUsers", type: :feature do
     click_link('LOG OUT')
   end
 end
-

@@ -14,11 +14,11 @@ RSpec.describe Following, type: :model do
     let(:follow) { Following.create(follower_id: user1.id, followed_id: user2.id) }
 
     it 'user has follower' do
-      expect(user2.followers.first).to eq(User.find_by(username: "user1"))
+      expect(user2.followers.first).to eq(User.find_by(username: 'user1'))
     end
 
     it 'user follows' do
-      expect(user1.followees.first).to eq(User.find_by(username: "user2"))
+      expect(user1.followees.first).to eq(User.find_by(username: 'user2'))
     end
   end
 end
