@@ -9,6 +9,6 @@ module UsersHelper
 
   def cannot_follow?(user)
     current_user == user ||
-    current_user.followees.where(username: user.username).exists?
+      current_user.followees.where(username: user.username).exists?
   end
 end

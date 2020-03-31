@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-
   validates :username, presence: true, uniqueness: { case_sensitive: false }
   validates :fullname, presence: true
 
@@ -16,28 +15,32 @@ class User < ApplicationRecord
 
   def thumbnail
     return "https://eu.ui-avatars.com/api/?#{query}&size=50&background=686F7A&color=fff" unless image.attached?
+
     image.variant(resize: '50x50!')
   end
 
   def profile
     return "https://eu.ui-avatars.com/api/?#{query}&size=150&background=686F7A&color=fff" unless image.attached?
+
     image.variant(resize: '150x150!')
   end
 
   def cover_photo
     return 'default.jpg' unless cover.attached?
+
     cover.variant(resize: '1110x400!')
   end
 
   def can_follow
-    User.all.order(created_at: :desc).map { |user| user unless self.followees.where(username: user.username).exists? }.compact
+    User.all.order(created_at: :desc).map do |user|
+      user unless followees.where(username: user.username).exists?
+    end .compact
   end
 
-
-  private 
+  private
 
   def query
-    hash = {name: "#{self.fullname}"}
-    query = hash.to_query
+    hash = { name: fullname.to_s }
+    hash.to_query
   end
 end
