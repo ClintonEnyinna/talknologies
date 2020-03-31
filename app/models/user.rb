@@ -15,12 +15,12 @@ class User < ApplicationRecord
   has_one_attached :cover
 
   def thumbnail
-    return 'default.jpg' unless image.attached?
+    return "https://eu.ui-avatars.com/api/?#{query}&size=50&background=0D8ABC&color=fff" unless image.attached?
     image.variant(resize: '50x50!')
   end
 
   def profile
-    return 'default.jpg' unless image.attached?
+    return "https://eu.ui-avatars.com/api/?#{query}&size=150&background=0D8ABC&color=fff" unless image.attached?
     image.variant(resize: '150x150!')
   end
 
@@ -32,5 +32,13 @@ class User < ApplicationRecord
   def cannot_follow?(user)
     self == user ||
       followees.where(username: user.username).exists?
+  end
+
+  
+  private 
+
+  def query
+    hash = {name: "#{self.fullname}"}
+    query = hash.to_query
   end
 end
