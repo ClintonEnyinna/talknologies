@@ -16,7 +16,7 @@ class OpinionsController < ApplicationController
   private
 
   def require_login
-    redirect_to login_path unless session[:user_id]
+    redirect_to login_path unless current_user
   end
 
   def opinion_param
