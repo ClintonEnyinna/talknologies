@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  before_create :image_nil
 
   validates :username, presence: true, uniqueness: { case_sensitive: false }
   validates :fullname, presence: true
@@ -13,21 +12,21 @@ class User < ApplicationRecord
   has_many :followers, through: :following_users
 
   has_one_attached :image
-
-  def image_nil
-    image.attach(io: File.open('app/assets/images/default.jpg'), filename: 'default.jpg') unless image.attached?
-  end
+  has_one_attached :cover
 
   def thumbnail
-    image.variant(resize: '80x80!').processed
+    return 'default.jpg' unless image.attached?
+    image.variant(resize: '50x50!')
   end
 
   def profile
-    image.variant(resize: '150x150!').processed
+    return 'default.jpg' unless image.attached?
+    image.variant(resize: '150x150!')
   end
 
-  def cover
-    image.variant(resize: '1110x400!').processed
+  def cover_photo
+    return 'default.jpg' unless cover.attached?
+    cover.variant(resize: '1110x400!')
   end
 
   def cannot_follow?(user)
