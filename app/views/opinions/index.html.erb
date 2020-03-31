@@ -25,13 +25,13 @@
             <% unless current_user.cannot_follow?(user) %>
               <div class="card mb-4 border-0 bg-transparent">
                   <div class="row no-gutters">
-                    <div class="col-sm-2">
+                    <div class="col-sm-2 text-center">
                       <%= image_tag(user.thumbnail, class: 'side-thumbnail') %>
                     </div>
                     <div class="col-sm-10">
-                      <div class="card-body py-3 px-4">
-                        <h6 class="card-title mb-0"><%= link_to user.fullname, user_path(user) %></h6>
-                        <small class="text-muted">@<%=user.username%></small>
+                      <div class="card-body p-0">
+                        <h6 class="card-title mb-0"><%= link_to user.fullname, user_path(user), class: 'text-dark font-weight-bold text-decoration-none' %></h6>
+                        <span class="text-muted text-extra-small">@<%=user.username%></span>
                       </div>
                     </div>
                   </div>
