@@ -2,7 +2,7 @@ class OpinionsController < ApplicationController
   before_action :require_login
 
   def index
-    @users = User.all.order(created_at: :desc)
+    @users = current_user.can_follow
     @opinions = Opinion.all.includes(:author)
   end
 

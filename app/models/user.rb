@@ -29,9 +29,8 @@ class User < ApplicationRecord
     cover.variant(resize: '1110x400!')
   end
 
-  def cannot_follow?(user)
-    self == user ||
-      followees.where(username: user.username).exists?
+  def can_follow
+    User.all.order(created_at: :desc).map { |user| user unless self.followees.where(username: user.username).exists? }.compact
   end
 
 

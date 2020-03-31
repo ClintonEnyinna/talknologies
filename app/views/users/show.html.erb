@@ -10,13 +10,7 @@
           <%= link_to 'TWEETS', root_path, class: 'nav-link main-nav active text-dark px-0' %>
         </div>
         <div class="ml-auto">
-          <% unless current_user?(@user) %>
-            <% unless current_user.cannot_follow?(@user) %>
-              <%= button_to 'FOLLOW', {controller: "friendships", action: "create", id: @user.id}, method: :post, class: 'btn btn-outline-primary' %>
-            <% else %>
-              <%= button_to 'UNFOLLOW', {controller: "friendships", action: "destroy", id: @user.id}, method: :delete, class: 'btn btn-outline-danger' %>
-            <% end %>
-          <% end %>
+          <%= render 'follow', user: @user %>
         </div>
       </nav>
       <div>
