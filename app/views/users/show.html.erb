@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="row" style="min-height: calc(100vh - 72px);">
+  <div class="row" style="min-height: calc(100vh - 73px);">
     <%= render 'shared/leftnav' %>
     <main class="col-sm-7 p-0 bg-light border-right">
       <div class="cover">
@@ -10,7 +10,7 @@
           <%= link_to 'TWEETS', root_path, class: 'nav-link main-nav active text-dark px-0' %>
         </div>
         <div class="ml-auto">
-          <% unless current_user == @user %>
+          <% unless current_user?(@user) %>
             <% unless current_user.cannot_follow?(@user) %>
               <%= button_to 'FOLLOW', {controller: "friendships", action: "create", id: @user.id}, method: :post, class: 'btn btn-outline-primary' %>
             <% else %>

@@ -13,12 +13,18 @@
     <div class="row">
     <nav class="w-100">
         <ul class="list-unstyled">
-        <li class="">
-            <%= link_to 'HOME', root_path, class: 'p-3 color-link' %>
-        </li>
-        <li class="">
-            <%= link_to 'PROFILE', user_path(current_user), class: 'p-3 color-link' %>
-        </li>
+					<li class="">
+							<%= link_to 'HOME', root_path, class: 'p-3 color-link' %>
+					</li>
+					<li class="">
+							<%= link_to 'DISCOVER', users_path, class: 'p-3 color-link' %>
+					</li>
+					<li class="">
+							<%= link_to 'PROFILE', user_path(current_user), class: 'p-3 color-link' %>
+					</li>
+					<li class="">
+							<%= link_to 'SETTINGS', user_path(current_user), class: 'p-3 color-link' %>
+					</li>
         </ul>
     </nav>
     </div>
