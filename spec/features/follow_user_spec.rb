@@ -35,7 +35,7 @@ RSpec.feature 'FollowUsers', type: :feature do
   end
 
   def log_out
-    click_link('ACCOUNT')
+    find('.settings').click
     click_link('LOG OUT')
   end
 end
