@@ -15,12 +15,12 @@ class User < ApplicationRecord
   has_one_attached :cover
 
   def thumbnail
-    return "https://eu.ui-avatars.com/api/?#{query}&size=50&background=0D8ABC&color=fff" unless image.attached?
+    return "https://eu.ui-avatars.com/api/?#{query}&size=50&background=686F7A&color=fff" unless image.attached?
     image.variant(resize: '50x50!')
   end
 
   def profile
-    return "https://eu.ui-avatars.com/api/?#{query}&size=150&background=0D8ABC&color=fff" unless image.attached?
+    return "https://eu.ui-avatars.com/api/?#{query}&size=150&background=686F7A&color=fff" unless image.attached?
     image.variant(resize: '150x150!')
   end
 
@@ -34,7 +34,7 @@ class User < ApplicationRecord
       followees.where(username: user.username).exists?
   end
 
-  
+
   private 
 
   def query
