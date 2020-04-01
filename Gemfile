@@ -35,6 +35,8 @@ gem 'image_processing'
 
 gem 'aws-sdk-s3', require: false
 
+gem 'font-awesome-sass', '~> 5.12.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -13,17 +13,25 @@
     <div class="row">
     <nav class="w-100">
         <ul class="list-unstyled">
-					<li class="">
-							<%= link_to 'HOME', root_path, class: 'p-3 color-link' %>
+          <li class="">
+            <%= link_to root_path, class: 'p-3 color-link' do %>
+              <%= icon('fas', 'home', class: 'pr-1') %> HOME
+            <% end %>
 					</li>
-					<li class="">
-							<%= link_to 'DISCOVER', users_path, class: 'p-3 color-link' %>
+          <li class="">
+            <%= link_to users_path, class: 'p-3 color-link' do %>
+              <%= icon('fas', 'hashtag', class: 'pr-1') %> DISCOVER
+            <% end %>
 					</li>
-					<li class="">
-							<%= link_to 'PROFILE', user_path(current_user), class: 'p-3 color-link' %>
+          <li class="">
+            <%= link_to user_path(current_user), class: 'p-3 color-link' do %>
+              <%= icon('fas', 'user', class: 'pr-1') %> PROFILE
+            <% end %>
 					</li>
-					<li class="">
-							<%= link_to 'SETTINGS', edit_user_path(current_user), class: 'p-3 color-link' %>
+          <li class="">
+            <%= link_to edit_user_path(current_user), class: 'p-3 color-link' do %>
+              <%= icon('fas', 'cog', class: 'pr-1') %> SETTINGS
+            <% end %>
 					</li>
         </ul>
     </nav>
