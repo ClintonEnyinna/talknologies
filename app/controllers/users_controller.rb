@@ -44,6 +44,6 @@ class UsersController < ApplicationController
   end
 
   def require_login
-    redirect_to login_path unless session[:user_id]
+    redirect_to login_path unless current_user
   end
 end
