@@ -1,13 +1,13 @@
 <div class="container-fluid">
   <div class="row" style="min-height: calc(100vh - 73px);">
-    <%= render 'shared/leftnav' %>
+    <%= render "shared/leftnav" %>
     <main class="col-sm-7 p-0 bg-light border-right">
       <nav class="nav px-5 mb-5 main-nav border-bottom d-flex align-items-center">
-        <%= link_to 'TWEETS', root_path, class: 'nav-link active text-dark px-0' %>
+        <%= link_to "POSTS", root_path, class: "nav-link active text-dark px-0" %>
       </nav>
       <div>
         <div class="container px-5">
-          <%= render 'shared/tweets' %>
+          <%= render "shared/tweets" %>
         </div>
       </div>
     </main>
@@ -23,12 +23,12 @@
             <div class="card mb-4 border-0 bg-transparent">
                 <div class="row no-gutters">
                   <div class="col-sm-2 text-center">
-                    <%= image_tag(user.thumbnail, class: 'side-thumbnail') %>
+                    <%= image_tag(user.thumbnail, class: "side-thumbnail") %>
                   </div>
                   <div class="col-sm-10">
                     <div class="card-body p-0">
-                      <h6 class="card-title mb-0"><%= link_to user.fullname, user_path(user), class: 'text-dark font-weight-bold text-decoration-none' %></h6>
-                      <span class="text-muted text-extra-small">@<%=user.username%></span>
+                      <h6 class="card-title mb-0"><%= link_to user.fullname, user_path(user), class: "text-dark font-weight-bold text-decoration-none" %></h6>
+                      <span class="text-muted text-extra-small">@<%= user.username %></span>
                     </div>
                   </div>
                 </div>

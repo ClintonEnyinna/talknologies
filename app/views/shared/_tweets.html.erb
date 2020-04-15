@@ -1,23 +1,23 @@
 <div class="bg-white border rounded">
-    <h6 class="p-3 m-0 text-muted">TWEET SOMETHING</h6>
-    <%= form_for(:opinion, url: opinions_path, html: {class: 'px-3 pb-3'}) do |f| %>
+    <h6 class="p-3 m-0 text-muted">CREATE A POST</h6>
+    <%= form_for(:opinion, url: opinions_path, html: { class: "px-3 pb-3" }) do |f| %>
     <div class="form-group">
-        <%= f.text_field :text, class: 'form-control text-extra-small', placeholder: 'What tech is trending?' %>
+        <%= f.text_field :text, class: "form-control text-extra-small", placeholder: "What tech is trending?" %>
     </div> 
     <% end %>
     </div>
     <div class="bg-white border rounded px-3 py-4 mt-5 mb-5">
-    <h6 class="pb-3 mb-3 border-bottom text-primary">RECENT TWEETS</h6>
+    <h6 class="pb-3 mb-3 border-bottom text-primary">RECENT POSTS</h6>
     <% @opinions.each do |opinion| %>
         <div class="card mb-3 border-0">
             <div class="row no-gutters border-bottom">
                 <div class="col-3 col-lg-1 pb-3 text-center">
-                <%= image_tag(opinion.author.thumbnail, class: 'thumbnail')%>
+                <%= image_tag(opinion.author.thumbnail, class: "thumbnail") %>
                 </div>
                 <div class="col-9 col-lg-11">
                     <div class="card-body p-0">
                         <h6 class="card-title mb-0">
-                        <%= link_to opinion.author.fullname, user_path(opinion.author), class: 'text-body font-weight-bold text-decoration-none' %>
+                        <%= link_to opinion.author.fullname, user_path(opinion.author), class: "text-body font-weight-bold text-decoration-none" %>
                         <span class="text-extra-small text-muted">@<%= opinion.author.username %> · <%= time_ago_in_words(opinion.created_at) %></span>
                         </h6>
                         <p class="card-text text-dark pb-2"><%= opinion.text %></p>

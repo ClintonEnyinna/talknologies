@@ -1,90 +1,89 @@
-.bg-blue{
-    background-color: #213245;
+.bg-blue {
+  background-color: #213245;
 }
 
-.bg-light-blue{
-    background-color: #51A5E5;
+.bg-light-blue {
+  background-color: #51a5e5;
 }
 
-.b-bottom{
-    border-bottom: 1px solid rgb(39, 38, 38);
+.b-bottom {
+  border-bottom: 1px solid rgb(39, 38, 38);
 }
 
 .b-right {
-    border-right: 1px solid rgb(39, 38, 38);
+  border-right: 1px solid rgb(39, 38, 38);
 }
 
-.main-nav{
-    height: 67px;
+.main-nav {
+  height: 67px;
 }
 
-.active{
-    height: inherit;
-    line-height: 63px;
-    border-bottom: 2px solid rgb(32, 32, 83);
+.active {
+  height: inherit;
+  line-height: 63px;
+  border-bottom: 2px solid rgb(32, 32, 83);
 }
 
-li a{
-    display: block;
+li a {
+  display: block;
 }
 
-.color-link{
-    color: #667B8F;
-    width: inherit;
-    text-decoration: none !important;
+.color-link {
+  color: #667b8f;
+  width: inherit;
+  text-decoration: none !important;
 }
 
-.color-link:hover{
-    color: white;
-}
-
-.current{
+.color-link:hover {
   color: white;
-  background-color: #4E9DD8;
 }
 
-.text-small{
+.current {
+  color: white;
+  background-color: #4e9dd8;
+}
+
+.text-small {
   font-size: 0.9vw;
 }
 
-.cover-img{
+.cover-img {
   max-height: 400px;
   width: 100%;
 }
 
-.dropdown-link{
-    color: black;
+.dropdown-link {
+  color: black;
 }
 
-.dropdown-link:hover{
-    color: white;
-    background-color: #4E9DD8;
+.dropdown-link:hover {
+  color: white;
+  background-color: #4e9dd8;
 }
 
 .thumbnail {
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    border-radius: 50%;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
 }
 
 .side-thumbnail {
-    border-radius: 50%;
-    border: 1px solid #ddd;
-    object-fit: contain;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  object-fit: contain;
 }
 
 .header-thumbnail {
-    border-radius: 4px;
-    border: 1px solid black;
-    padding: 3px;
-    width: 70px;
-    height: 52px;
+  border-radius: 4px;
+  border: 1px solid black;
+  width: 70px;
+  height: 52px;
 }
 
 .text-extra-small {
-    font-size: 14px;
+  font-size: 14px;
 }
 
-.profile-img{
-    border-radius: 50%;
+.profile-img {
+  border-radius: 50%;
 }

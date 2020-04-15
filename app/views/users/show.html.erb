@@ -1,21 +1,21 @@
 <div class="container-fluid">
   <div class="row" style="min-height: calc(100vh - 73px);">
-    <%= render 'shared/leftnav' %>
+    <%= render "shared/leftnav" %>
     <main class="col-sm-7 p-0 bg-light border-right">
       <div class="cover">
-        <%= image_tag(@user.cover_photo, class: 'cover-img') if current_user.cover %>
+        <%= image_tag(@user.cover_photo, class: "cover-img") if current_user.cover %>
       </div>
       <nav class="nav px-5 mb-5 border-bottom d-flex align-items-center">
         <div class="">
-          <%= link_to 'TWEETS', root_path, class: 'nav-link main-nav active text-dark px-0' %>
+          <%= link_to "POSTS", root_path, class: "nav-link main-nav active text-dark px-0" %>
         </div>
         <div class="ml-auto">
-          <%= render 'follow', user: @user %>
+          <%= render "follow", user: @user %>
         </div>
       </nav>
       <div>
         <div class="container px-5">
-          <%= render 'shared/tweets' %>
+          <%= render "shared/tweets" %>
         </div>
       </div>
     </main>
@@ -53,12 +53,12 @@
             <div class="card mb-4 border-0 bg-transparent">
                 <div class="row no-gutters">
                   <div class="col-sm-2 text-center">
-                    <%= image_tag(user.thumbnail, class: 'side-thumbnail') %>
+                    <%= image_tag(user.thumbnail, class: "side-thumbnail") %>
                   </div>
                   <div class="col-sm-10">
                     <div class="card-body p-0">
-                      <h6 class="card-title mb-0"><%= link_to user.fullname, user_path(user), class: 'text-body font-weight-bold text-decoration-none' %></h6>
-                      <small class="text-muted">@<%=user.username%></small>
+                      <h6 class="card-title mb-0"><%= link_to user.fullname, user_path(user), class: "text-body font-weight-bold text-decoration-none" %></h6>
+                      <small class="text-muted">@<%= user.username %></small>
                     </div>
                   </div>
                 </div>

@@ -1,7 +1,7 @@
 <% unless current_user?(user) %>
     <% if cannot_follow?(user) %>
-      <%= button_to "UNFOLLOW", { controller: "friendships", action: "destroy", id: user.id }, method: :delete, remote: :true, class: "btn btn-outline-danger" %>
+      <%= button_to "Unfollow", { controller: "friendships", action: "destroy", id: user.id }, method: :delete, remote: :true, class: "btn btn-outline-danger" %>
     <% else %>
-      <%= button_to "FOLLOW", { controller: "friendships", action: "create", id: user.id }, method: :post, remote: :true, class: "btn btn-outline-primary" %>
+      <%= button_to "Follow", { controller: "friendships", action: "create", id: user.id }, method: :post, remote: :true, class: "btn btn-outline-primary" %>
     <% end %>
 <% end %>
