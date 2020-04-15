@@ -25,10 +25,9 @@
                 </div>
                 <div class="w-100">
                     <ul class="list-unstyled d-flex justify-content-around mb-2">
-                        <li class="like">
-                            <%= link_to root_path, class: "text-decoration-none text-muted" do %>
-                                <%= icon("far", "heart", class: "pr-1") %>0 Likes
-                            <% end %>
+                        <li class="like d-flex text-muted">
+                            <%= like_or_dislike(opinion) %> 
+                            <%= num_of_likes(opinion) %>
                         </li>
                         <li class="text-muted">
                             <%= link_to root_path, class: "text-decoration-none text-muted" do %>
