@@ -7,7 +7,7 @@ class LikesController < ApplicationController
 
   def destroy
     @like = Like.find_by(id: params[:id], user: current_user, opinion_id: params[:opinion_id])
-    @like.destroy if @like
+    @like&.destroy
     redirect_to request.referrer
   end
 end
