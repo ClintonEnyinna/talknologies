@@ -23,6 +23,12 @@
                         <p class="card-text text-dark pb-2"><%= opinion.text %></p>
                     </div>
                 </div>
+                <div class="w-100">
+                    <ul class="list-unstyled d-flex justify-content-around mb-2">
+                        <li class="text-muted like"><%= icon("far", "heart", class: "pr-1") %>0 Likes</li>
+                        <li class="text-muted"><%= icon("far", "comment", class: "pr-1") %>0 Comments</li>
+                    </ul>
+                </div>
             </div>
         </div>
     <% end %>
