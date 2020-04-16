@@ -14,7 +14,6 @@ RSpec.feature 'FollowUsers', type: :feature do
     user2
     log_in(user1)
     send_request
-    click_link('Log out')
     log_in(user2)
     visit user_path(user2)
     expect(page).to have_content('1')
