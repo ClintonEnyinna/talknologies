@@ -9,8 +9,8 @@
         <div class="">
           <%= link_to "POSTS", root_path, class: "nav-link main-nav active text-dark px-0" %>
         </div>
-        <div class="ml-auto">
-          <%= render "follow", user: @user %>
+        <div class="user-<%= @user.id %> ml-auto">
+          <%= render "shared/follow", user: @user %>
         </div>
       </nav>
       <div>

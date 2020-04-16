@@ -2,11 +2,11 @@
   <% if current_user %>
     <div class="row text-center b-bottom">
     <div class="col-sm-6 py-2 b-right">
-        <div class="text-white"><%= current_user.followees.count %></div>
+        <div class="following text-white"><%= current_user.followees.count %></div>
         <h6 class="text-secondary text-small">Following</h6>
     </div>
     <div class="col-sm-6 py-2">
-        <div class="text-white"><%= current_user.followers.count %></div>
+        <div class="followers text-white"><%= current_user.followers.count %></div>
         <h6 class="text-secondary text-small">Followers</h6>
     </div>
     </div>

@@ -1,0 +1,2 @@
+$(".user-<%= @friend.id %>").html("<%= j (render 'shared/follow', user: @friend) %>")
+$('.following').html("<%= current_user.followees.count %>")
