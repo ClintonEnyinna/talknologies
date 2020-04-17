@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row" style="min-height: calc(100vh - 73px);">
     <%= render "shared/leftnav" %>
-    <main class="col-sm-7 p-0 bg-light border-right">
+    <main class="col-sm-7 p-0 bg-light border-right main-content">
       <div class="cover">
         <%= image_tag(@user.cover_photo, class: "cover-img") if current_user.cover %>
       </div>
@@ -19,7 +19,7 @@
         </div>
       </div>
     </main>
-    <aside class="col-sm-3 bg-light">
+    <aside class="col-sm-3 bg-light right-nav">
       <div class="">
         <div class="text-center d-flex flex-column align-items-stretch" style="height: 400px;">
           <div class="pt-5">
