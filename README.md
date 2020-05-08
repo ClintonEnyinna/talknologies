@@ -33,7 +33,7 @@ Features
 
 
 ## Live Version
-[Link to app :star2:](https://mighty-lowlands-57810.herokuapp.com/)
+[Link to app :star2:](https://talknologies.herokuapp.com/)
 
 
 ## Built with
